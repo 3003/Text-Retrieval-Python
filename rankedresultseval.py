@@ -36,8 +36,8 @@ from math import log
 
 
 # Returns a list of precisions for a ranked result set with relevance feedback
-# precision = number of relevant documents retrieved 	/ 	number of retrieved documents
-# precision = True positives 							/ 	(True positives + False positives)
+# precision = number of relevant documents retrieved / number of retrieved documents
+# precision = True positives                         / (True positives + False positives)
 # use: print precision(sample_serp)
 def precision(serp):
 	l = []
@@ -50,8 +50,8 @@ def precision(serp):
 	return l
 
 # Returns a list of recalls for a ranked result set with relevance feedback
-# recall = number of relevant documents retrieved 		/	number of relevant documents
-# recall = True positives								/	(True positives + False negatives)
+# recall = number of relevant documents retrieved /	number of relevant documents
+# recall = True positives                         / (True positives + False negatives)
 # False negative = Relevant, not yet retrieved 
 # Use: print recall(sample_serp)
 def recall(serp):
@@ -76,9 +76,10 @@ def interpolated_precision(serp, precisions = []):
 	return l
 
 # Returns a list of Average of Precision (AP)
-# AP = 	After each relevant document is retrieved, 
-# 		Take the avarage of the precisions, 
-#		Up to and including the current level.
+# AP = 
+# After each relevant document is retrieved, 
+# Take the avarage of the precisions, 
+# Up to and including the current level.
 # Use: print avg_precision(sample_serp, precision(sample_serp))
 def avg_precision(serp, precisions = []):
 	avg_precisions = []
@@ -105,10 +106,10 @@ def cumulative_gain(serp):
 	return cg
 
 # Returns the float Discounted Cumulative Gain (DCG) for a ranked result set with relevance feedback
-# Principle: 	Highly relevant documents appearing lower in a search result list should be penalized.
-#				The graded relevance value is reduced logarithmically proportional to the position of the result.
+# Principles:
+# 1. Highly relevant documents appearing lower in a search result list should be penalized.
+# 2. The graded relevance value is reduced logarithmically proportional to the position of the result.
 # Use: print discounted_cumulative_gain(sample_serp)
-
 # Todo: Adapted Discounted Cumulative Gain from the Yahoo ranking challenge gives better results for non-binary relevance?
 def discounted_cumulative_gain(serp):
 	return sum([g/log(i+2) for (i,g) in enumerate([rank[1] for rank in serp])])
