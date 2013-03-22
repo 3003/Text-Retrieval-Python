@@ -8,9 +8,12 @@ What makes for a good search engine?
 - Quality
 
 Optionally:
-- Personalized
-- Localized
+- Personalization
+- Localization
+- Customization
+- Simplicity / UX
 - Social
+- Privacy
 
 ###Measuring Quality###
 How de we assess the quality of a search engine result page (SERP)?
