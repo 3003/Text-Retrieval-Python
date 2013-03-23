@@ -7,7 +7,7 @@ Search process:
 - Users obtain a **result** and may **reformulate** (refine) their query, based on **suggestions**.
 
 ##Ranking##
-Search engines use(d) to rank web documents based on features, such as:
+Search engines (used to) rank web documents based on features, such as:
 - Term Frequency (In URL, pagetitle, body and metatags)
 - TF-IDF
 - BM25
@@ -31,7 +31,7 @@ Search engines use(d) to rank web documents based on features, such as:
 - Reading level
 
 ###Term Frequency - Inverted Document Frequency (TF-IDF)###
-**TF-IDF** is the product of TF and IDF. A high TF-IDF means the term is related to a document.
+**TF-IDF** is the product of TF and IDF. A high TF-IDF means the term is highly related to a document.
 
 **TF** or tf(t,d), can prevent bias to longer documents:
 - Raw Frequency: Simply count the number of times the term/query appears in the document.
@@ -41,11 +41,9 @@ Search engines use(d) to rank web documents based on features, such as:
 - Normalized Frequency: tf(t,d) = tf(t,d) / maximum raw frequency of any term in the document
 
 To illustrate TF. We have 2 documents A and B: 
-- Document A has 10 words and Document B has 100 words
-- The term "Alice" appears 1 time in document A
-- The term "Alice" appears 5 times in document B
-- Proportional: tf(t,d) for document A = 1 / 10 = 0.1
-- Proportional: tf(t,d) for document B = 5 / 100 = 0.05
+- Document A has 10 words and Document B has 100 words.
+- The term "Alice" appears 1 time in document A. Proportional: tf(t,d) for document A = 1 / 10 = 0.1
+- The term "Alice" appears 5 times in document B. Proportional: tf(t,d) for document B = 5 / 100 = 0.05
 
 **IDF** or idf(t, docs), prevents bias to common words and values unique words:
 - idf(t, docs): count all documents / Boolean frequency of the term in all documents.
