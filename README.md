@@ -1,11 +1,58 @@
 #Text Retrieval Python#
-A collection of Python scripts with functions for Text Retrieval
+A collection of Python scripts with functions for Text Retrieval.
+
+Search process:
+- Users perform a *task* that has an *information need*, from which a *query* is formulated.
+- A *search engine* processes textual queries and *retrieves* a *ranked* list of *documents*.
+- Users obtain a *result* and may *reformulate* (refine) their query, based on *suggestions*.
+
+##Ranking##
+There are quite a few ways to match a query to a set of documents.
+
+###Term Frequency - Inverted Document Frequency (TF-IDF)###
+TF-IDF is the product of TF and IDF. A high TF-IDF means the term is related to a document.
+
+TF or tf(t,d), can prevent bias to longer documents:
+- Raw Frequency: Simply count the number of times the term/query appears in the document.
+- Boolean Frequency: tf(t,d) = 1 if term in document, else tf(t,d) = 0
+- Logarithmically Scaled Frequency: tf(t,d) = 1 + log f(t,d) if term in document, else tf(t,d) = 0
+- Proportional Frequency: tf(t,d) = tf(t,d) / size of all terms in document
+- Normalized Frequency: tf(t,d) = tf(t,d) / maximum raw frequency of any term in the document
+
+IDF or idf(t, docs), prevents bias to common words and values unique words:
+- idf(t, docs): count all documents / Boolean frequency of the term in all documents.
+
+Example IDF. We have 20 documents. We have three words:
+- a very common word, appears in all documents: IDF = 20 / 20 = 1
+- a fairly common word, appears in half of the documents: IDF = 20 / 10 = 2
+- a very rare word, appears in only 10% of documents: IDF = 20 / 2 = 10
+
+####tfidf.py####
+Functions:
+- TF Raw
+- TF Proportional
+- IDF
+- Very simple tokenizer
+
+Sample output:
+
+	Term: alice
+	First 5 document tokens: ['alice', 'wunderland', '1009', 'tree', 'lane']
+	Term count in document 1
+	Token count in document: 6
+	Number of documents: 3
+	Number of documents with term: 2
+	TF:         0.1666
+	IDF:        1.5
+	TFIDF:      0.25
 
 ##Evaluating Search Engine Results##
 What makes for a good search engine? 
+
+Mainly:
 - Speed
 - Size
-- Quality
+- *Quality*
 
 Optionally:
 - Personalization
