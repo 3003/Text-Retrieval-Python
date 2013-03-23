@@ -2,24 +2,24 @@
 A collection of Python scripts with functions for Text Retrieval.
 
 Search process:
-- Users perform a *task* that has an *information need*, from which a *query* is formulated.
-- A *search engine* processes textual queries and *retrieves* a *ranked* list of *documents*.
-- Users obtain a *result* and may *reformulate* (refine) their query, based on *suggestions*.
+- Users perform a **task** that has an **information need**, from which a **query** is formulated.
+- A **search engine** processes textual queries and **retrieves** a **ranked** list of **documents**.
+- Users obtain a **result** and may **reformulate** (refine) their query, based on **suggestions**.
 
 ##Ranking##
 There are quite a few ways to match a query to a set of documents.
 
 ###Term Frequency - Inverted Document Frequency (TF-IDF)###
-TF-IDF is the product of TF and IDF. A high TF-IDF means the term is related to a document.
+**TF-IDF** is the product of TF and IDF. A high TF-IDF means the term is related to a document.
 
-TF or tf(t,d), can prevent bias to longer documents:
+**TF** or tf(t,d), can prevent bias to longer documents:
 - Raw Frequency: Simply count the number of times the term/query appears in the document.
 - Boolean Frequency: tf(t,d) = 1 if term in document, else tf(t,d) = 0
 - Logarithmically Scaled Frequency: tf(t,d) = 1 + log f(t,d) if term in document, else tf(t,d) = 0
 - Proportional Frequency: tf(t,d) = tf(t,d) / size of all terms in document
 - Normalized Frequency: tf(t,d) = tf(t,d) / maximum raw frequency of any term in the document
 
-IDF or idf(t, docs), prevents bias to common words and values unique words:
+**IDF** or idf(t, docs), prevents bias to common words and values unique words:
 - idf(t, docs): count all documents / Boolean frequency of the term in all documents.
 
 Example IDF. We have 20 documents. We have three words:
@@ -52,7 +52,7 @@ What makes for a good search engine?
 Mainly:
 - Speed
 - Size
-- *Quality*
+- **Quality**
 
 Optionally:
 - Personalization
