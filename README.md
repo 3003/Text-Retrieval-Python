@@ -37,13 +37,20 @@ Search engines use(d) to rank web documents based on features, such as:
 - Raw Frequency: Simply count the number of times the term/query appears in the document.
 - Boolean Frequency: tf(t,d) = 1 if term in document, else tf(t,d) = 0
 - Logarithmically Scaled Frequency: tf(t,d) = 1 + log f(t,d) if term in document, else tf(t,d) = 0
-- Proportional Frequency: tf(t,d) = tf(t,d) / size of all terms in document
+- Proportional Frequency: tf(t,d) = tf(t,d) / number of all terms in document
 - Normalized Frequency: tf(t,d) = tf(t,d) / maximum raw frequency of any term in the document
+
+To illustrate TF. We have 2 documents A and B: 
+- Document A has 10 words and Document B has 100 words
+- The term "Alice" appears 1 time in document A
+- The term "Alice" appears 5 times in document B
+- Proportional: tf(t,d) for document A = 1 / 10 = 0.1
+- Proportional: tf(t,d) for document B = 5 / 100 = 0.05
 
 **IDF** or idf(t, docs), prevents bias to common words and values unique words:
 - idf(t, docs): count all documents / Boolean frequency of the term in all documents.
 
-Example IDF. We have 20 documents. We have three words:
+To illustrate IDF. We have 20 documents. We have three words:
 - a very common word, appears in all documents: IDF = 20 / 20 = 1
 - a fairly common word, appears in half of the documents: IDF = 20 / 10 = 2
 - a very rare word, appears in only 10% of documents: IDF = 20 / 2 = 10
