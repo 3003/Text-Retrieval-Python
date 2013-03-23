@@ -7,7 +7,28 @@ Search process:
 - Users obtain a **result** and may **reformulate** (refine) their query, based on **suggestions**.
 
 ##Ranking##
-There are quite a few ways to match a query to a set of documents.
+Search engines use(d) to rank web documents based on features, such as:
+- Term Frequency (In URL, pagetitle, body and metatags)
+- TF-IDF
+- BM25
+- LSI
+- Keyword Density
+- Boolean models
+- Vector space models
+- PageRank
+- Number of inbound links
+- Number of outbound links
+- Link quality
+- Page quality
+- Site quality
+- Author quality
+- Document length
+- Number of slashes in URL
+- Length of URL
+- URL click count from user data
+- URL click count on result pages
+- URL dwell time
+- Reading level
 
 ###Term Frequency - Inverted Document Frequency (TF-IDF)###
 **TF-IDF** is the product of TF and IDF. A high TF-IDF means the term is related to a document.
